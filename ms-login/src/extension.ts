@@ -15,12 +15,9 @@ export function activate(context: vscode.ExtensionContext) {
 
     const azureAccount = extensions.getExtension<AzureAccount>('ms-vscode.azure-account')!.exports;
     const subscriptions = context.subscriptions;
-    subscriptions.push(commands.registerCommand('login-demo.helloWorld', () => vscode.window.showInformationMessage(`Hello World from login-demo!`)));
-    subscriptions.push(commands.registerCommand('login-demo.showSubscriptions', login.showSubscriptions(azureAccount)));
-    console.log('showSubscriptions');
+    subscriptions.push(commands.registerCommand('login-demo.helloWorld', () => vscode.window.showInformationMessage(`Hello World from login-demo!!`)));
+    subscriptions.push(commands.registerCommand('login-demo.showSubscriptions',login.showSubscriptions(azureAccount)));
     subscriptions.push(commands.registerCommand('login-demo.showAppServices', login.showAppServices(azureAccount)));
-
-    // context.subscriptions.push(disposable);
 }
 
 // this method is called when your extension is deactivated
